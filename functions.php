@@ -22,5 +22,3 @@ function register_kasturi_package_widget( $widgets_manager ) {
 }
 add_action( 'elementor/widgets/register', 'register_kasturi_package_widget' );
 
-
-

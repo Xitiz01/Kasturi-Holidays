@@ -268,6 +268,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
             ]
         );
 
+
         // Container Styles
         $this->add_control(
             'container_heading',
@@ -543,6 +544,101 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
                 ],
             ]
         );
+        // Slider Navigation Arrows Styles
+        $this->add_control(
+            'arrows_heading',
+            [
+                'label' => __('Slider Arrows', 'text-domain'),
+                'type' => \Elementor\Controls_Manager::HEADING,
+                'separator' => 'before',
+                'condition' => ['layout_style' => 'slider'],
+            ]
+        );
+
+        $this->add_control(
+            'arrow_color',
+            [
+                'label' => __('Arrow Color', 'text-domain'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .swiper-button-next, {{WRAPPER}} .swiper-button-prev' => 'color: {{VALUE}};',
+                ],
+                'condition' => ['layout_style' => 'slider'],
+            ]
+        );
+
+        $this->add_control(
+            'arrow_bg_color',
+            [
+                'label' => __('Arrow Background', 'text-domain'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .swiper-button-next, {{WRAPPER}} .swiper-button-prev' => 'background-color: {{VALUE}};',
+                ],
+                'condition' => ['layout_style' => 'slider'],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'arrow_size',
+            [
+                'label' => __('Arrow Size', 'text-domain'),
+                'type' => \Elementor\Controls_Manager::SLIDER,
+                'range' => [
+                    'px' => [
+                        'min' => 16,
+                        'max' => 64,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .swiper-button-next, {{WRAPPER}} .swiper-button-prev' => 'font-size: {{SIZE}}{{UNIT}};',
+                ],
+                'condition' => ['layout_style' => 'slider'],
+            ]
+        );
+
+        $this->add_group_control(
+            \Elementor\Group_Control_Border::get_type(),
+            [
+                'name' => 'arrow_border',
+                'label' => __('Arrow Border', 'text-domain'),
+                'selector' => '{{WRAPPER}} .swiper-button-next, {{WRAPPER}} .swiper-button-prev',
+                'condition' => ['layout_style' => 'slider'],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'arrow_border_radius',
+            [
+                'label' => __('Arrow Border Radius', 'text-domain'),
+                'type' => \Elementor\Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors' => [
+                    '{{WRAPPER}} .swiper-button-next, {{WRAPPER}} .swiper-button-prev' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                'condition' => ['layout_style' => 'slider'],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'arrow_spacing',
+            [
+                'label' => __('Arrow Spacing', 'text-domain'),
+                'type' => \Elementor\Controls_Manager::SLIDER,
+                'range' => [
+                    'px' => [
+                        'min' => -50,
+                        'max' => 100,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .swiper-button-next' => 'right: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .swiper-button-prev' => 'left: {{SIZE}}{{UNIT}};',
+                ],
+                'condition' => ['layout_style' => 'slider'],
+            ]
+        );
+
 
         $this->start_controls_tabs('cta_tabs');
 
@@ -646,59 +742,59 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         <?php if ($is_slider): ?>
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-        <?php else: ?>
-            <div class="packages-container grid-layout" style="--grid-columns: <?php echo $grid_columns; ?>;">
-        <?php endif; ?>
+                    <?php else: ?>
+                        <div class="packages-container grid-layout" style="--grid-columns: <?php echo $grid_columns; ?>;">
+                    <?php endif; ?>
 
-        <?php if (!empty($settings['packages'])) : ?>
-            <?php foreach ($settings['packages'] as $package) : ?>
-                <?php if (!$is_slider && $package_count >= $max_items) break; ?>
-                <?php if ($is_slider): ?>
-                    <div class="swiper-slide">
-                <?php endif; ?>
+                <?php if (!empty($settings['packages'])) : ?>
+                    <?php foreach ($settings['packages'] as $package) : ?>
+                        <?php if (!$is_slider && $package_count >= $max_items) break; ?>
+                        <?php if ($is_slider): ?>
+                            <div class="swiper-slide">
+                        <?php endif; ?>
 
-                <div class="package-card">
-                    <!-- Replace with actual content -->
-                    <div class="package-image">
-                        <img src="<?php echo esc_url($package['image']['url']); ?>" alt="<?php echo esc_attr($package['title']); ?>">
-                    </div>
-                    <div class="package-content">
-                        <h3 class="package-title"><?php echo esc_html($package['title']); ?></h3>
-                        <div class="package-description"><?php echo esc_html($package['description']); ?></div>
-                        <div class="package-duration">
-                            <span class="package-icon">🕒</span><?php echo esc_html($package['duration']); ?>
+                        <div class="package-card">
+                            <!-- Replace with actual content -->
+                            <div class="package-image">
+                                <img src="<?php echo esc_url($package['image']['url']); ?>" alt="<?php echo esc_attr($package['title']); ?>">
+                            </div>
+                            <div class="package-content">
+                                <h3 class="package-title"><?php echo esc_html($package['title']); ?></h3>
+                                <div class="package-description"><?php echo esc_html($package['description']); ?></div>
+                                <div class="package-duration">
+                                    <span class="package-icon">🕒</span><?php echo esc_html($package['duration']); ?>
+                                </div>
+                                <div class="package-cta">
+                                    <a class="learn-more-btn"
+                                    href="<?php echo esc_url($package['link_url']['url']); ?>"
+                                    target="<?php echo esc_attr($package['link_url']['is_external'] ? '_blank' : '_self'); ?>">
+                                        <span class="arrow-icon">→</span> <?php echo esc_html($package['link_text']); ?>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="package-cta">
-                            <a class="learn-more-btn"
-                            href="<?php echo esc_url($package['link_url']['url']); ?>"
-                            target="<?php echo esc_attr($package['link_url']['is_external'] ? '_blank' : '_self'); ?>">
-                                <span class="arrow-icon">→</span> <?php echo esc_html($package['link_text']); ?>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+
+                        <?php if ($is_slider): ?>
+                            </div>
+                        <?php endif; ?>
+
+                        <?php $package_count++; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
 
                 <?php if ($is_slider): ?>
+                        </div>
+                        <?php if ($settings['show_arrows'] === 'yes'): ?>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        <?php endif; ?>
+                        <?php if ($settings['show_dots'] === 'yes'): ?>
+                            <div class="swiper-pagination"></div>
+                        <?php endif; ?>
+                    </div>
+                <?php else: ?>
                     </div>
                 <?php endif; ?>
-
-                <?php $package_count++; ?>
-            <?php endforeach; ?>
-        <?php endif; ?>
-
-        <?php if ($is_slider): ?>
-                </div>
-                <?php if ($settings['show_arrows'] === 'yes'): ?>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                <?php endif; ?>
-                <?php if ($settings['show_dots'] === 'yes'): ?>
-                    <div class="swiper-pagination"></div>
-                <?php endif; ?>
-            </div>
-        <?php else: ?>
-            </div>
-        <?php endif; ?>
     </div>
 
     <?php if ($is_slider): ?>
@@ -735,6 +831,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
     <?php endif; ?>
 
     <style>
+        .swiper-button-next::after, .swiper-button-prev::after { font-size: inherit; }
         .travel-packages-widget {
             padding: 40px 0;
             width: 100%;
