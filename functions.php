@@ -22,3 +22,23 @@ function register_kasturi_package_widget( $widgets_manager ) {
 }
 add_action( 'elementor/widgets/register', 'register_kasturi_package_widget' );
 
+// Function For Preloader
+function kadence_child_preloader_markup() {
+    ?>
+    <div id="site-preloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <?php
+}
+add_action('wp_body_open', 'kadence_child_preloader_markup');
+
+function kadence_child_enqueue_preloader_script() {
+    wp_enqueue_script(
+        'kadence-child-preloader',
+        get_stylesheet_directory_uri() . '/js/preloader.js',
+        array(),
+        '1.0',
+        true
+    );
+}
+add_action('wp_enqueue_scripts', 'kadence_child_enqueue_preloader_script');
