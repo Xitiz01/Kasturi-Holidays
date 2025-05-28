@@ -36,7 +36,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
     }
 
     public function get_title() {
-        return __( 'Travel Packages', 'text-domain' );
+        return __( 'Travel Packages', 'kadence-child' );
     }
 
     public function get_icon() {
@@ -51,7 +51,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'packages_section',
             [
-                'label' => __( 'Travel Packages', 'text-domain' ),
+                'label' => __( 'Travel Packages', 'kadence-child' ),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -60,19 +60,19 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'layout_style',
             [
-                'label' => __('Layout Style', 'text-domain'),
+                'label' => __('Layout Style', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'default' => 'grid',
                 'options' => [
-                    'grid' => __('Grid Layout', 'text-domain'),
-                    'slider' => __('Slider Layout', 'text-domain'),
+                    'grid' => __('Grid Layout', 'kadence-child'),
+                    'slider' => __('Slider Layout', 'kadence-child'),
                 ],
             ]
         );
         $this->add_control(
             'grid_columns',
             [
-                'label' => __('Columns', 'text-domain'),
+                'label' => __('Columns', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::NUMBER,
                 'min' => 1,
                 'max' => 6,
@@ -88,7 +88,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_responsive_control(
             'grid_rows',
             [
-                'label' => __('Rows', 'text-domain'),
+                'label' => __('Rows', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::NUMBER,
                 'min' => 1,
                 'max' => 10,
@@ -106,7 +106,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'slider_settings_heading',
             [
-                'label' => __('Slider Settings', 'text-domain'),
+                'label' => __('Slider Settings', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'separator' => 'before',
                 'condition' => ['layout_style' => 'slider'],
@@ -116,7 +116,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'slides_to_show',
             [
-                'label' => __('Slides to Show', 'text-domain'),
+                'label' => __('Slides to Show', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::NUMBER,
                 'min' => 1,
                 'max' => 6,
@@ -129,7 +129,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'autoplay',
             [
-                'label' => __('Autoplay', 'text-domain'),
+                'label' => __('Autoplay', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
                 'default' => 'yes',
                 'condition' => ['layout_style' => 'slider'],
@@ -139,7 +139,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'show_arrows',
             [
-                'label' => __('Show Arrows', 'text-domain'),
+                'label' => __('Show Arrows', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
                 'default' => 'yes',
                 'condition' => ['layout_style' => 'slider'],
@@ -149,7 +149,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'show_dots',
             [
-                'label' => __('Show Dots', 'text-domain'),
+                'label' => __('Show Dots', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
                 'default' => 'yes',
                 'condition' => ['layout_style' => 'slider'],
@@ -161,7 +161,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'package_repeater',
             [
-                'label' => __('Packages', 'text-domain'),
+                'label' => __('Packages', 'kadence-child'),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -172,7 +172,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $repeater->add_control(
             'image',
             [
-                'label' => __( 'Package Image', 'text-domain' ),
+                'label' => __( 'Package Image', 'kadence-child' ),
                 'type' => \Elementor\Controls_Manager::MEDIA,
                 'default' => [
                     'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -183,52 +183,52 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $repeater->add_control(
             'title',
             [
-                'label' => __( 'Package Title', 'text-domain' ),
+                'label' => __( 'Package Title', 'kadence-child' ),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __( 'Package Title', 'text-domain' ),
+                'default' => __( 'Package Title', 'kadence-child' ),
             ]
         );
 
         $repeater->add_control(
             'description',
             [
-                'label' => __( 'Description', 'text-domain' ),
+                'label' => __( 'Description', 'kadence-child' ),
                 'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'default' => __( 'Package description goes here...', 'text-domain' ),
+                'default' => __( 'Package description goes here...', 'kadence-child' ),
             ]
         );
 
         $repeater->add_control(
             'duration',
             [
-                'label' => __( 'Duration', 'text-domain' ),
+                'label' => __( 'Duration', 'kadence-child' ),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __( '7 Nights And 8 Days', 'text-domain' ),
+                'default' => __( '7 Nights And 8 Days', 'kadence-child' ),
             ]
         );
        $repeater->add_control(
             'link_text',
             [
-                'label' => __( 'Learn More Text', 'text-domain' ),
+                'label' => __( 'Learn More Text', 'kadence-child' ),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'placeholder' => __( 'Learn More', 'text-domain' ),
-                'default' => __( 'Learn More', 'text-domain' ),
+                'placeholder' => __( 'Learn More', 'kadence-child' ),
+                'default' => __( 'Learn More', 'kadence-child' ),
             ]
         );
 
         $repeater->add_control(
             'link_url',
             [
-                'label' => __( 'Learn More Link', 'text-domain' ),
+                'label' => __( 'Learn More Link', 'kadence-child' ),
                 'type' => \Elementor\Controls_Manager::URL,
-                'placeholder' => __( 'https://your-link.com', 'text-domain' ),
+                'placeholder' => __( 'https://your-link.com', 'kadence-child' ),
             ]
         );
 
         $this->add_control(
             'packages',
             [
-                'label' => __( 'Packages', 'text-domain' ),
+                'label' => __( 'Packages', 'kadence-child' ),
                 'type' => \Elementor\Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'title_field' => '{{{ title }}}',
@@ -263,7 +263,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'style_section',
             [
-                'label' => __('Styles', 'text-domain'),
+                'label' => __('Styles', 'kadence-child'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -273,7 +273,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'container_heading',
             [
-                'label' => __('Container', 'text-domain'),
+                'label' => __('Container', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -283,7 +283,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
             \Elementor\Group_Control_Background::get_type(),
             [
                 'name' => 'container_background',
-                'label' => __('Background', 'text-domain'),
+                'label' => __('Background', 'kadence-child'),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .package-card',
             ]
@@ -293,7 +293,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name' => 'container_border',
-                'label' => __('Border', 'text-domain'),
+                'label' => __('Border', 'kadence-child'),
                 'selector' => '{{WRAPPER}} .package-card',
             ]
         );
@@ -301,7 +301,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_responsive_control(
             'container_border_radius',
             [
-                'label' => __('Border Radius', 'text-domain'),
+                'label' => __('Border Radius', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors' => [
@@ -314,7 +314,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
             \Elementor\Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'container_box_shadow',
-                'label' => __('Box Shadow', 'text-domain'),
+                'label' => __('Box Shadow', 'kadence-child'),
                 'selector' => '{{WRAPPER}} .package-card',
             ]
         );
@@ -323,7 +323,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'title_heading',
             [
-                'label' => __('Title', 'text-domain'),
+                'label' => __('Title', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -332,19 +332,19 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_responsive_control(
             'title_alignment',
             [
-                'label' => __('Alignment', 'text-domain'),
+                'label' => __('Alignment', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __('Left', 'text-domain'),
+                        'title' => __('Left', 'kadence-child'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', 'text-domain'),
+                        'title' => __('Center', 'kadence-child'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => __('Right', 'text-domain'),
+                        'title' => __('Right', 'kadence-child'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -359,7 +359,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'title_typography',
-                'label' => __('Typography', 'text-domain'),
+                'label' => __('Typography', 'kadence-child'),
                 'selector' => '{{WRAPPER}} .package-title',
             ]
         );
@@ -367,7 +367,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'title_color',
             [
-                'label' => __('Color', 'text-domain'),
+                'label' => __('Color', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .package-title' => 'color: {{VALUE}};',
@@ -378,7 +378,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_responsive_control(
             'title_spacing',
             [
-                'label' => __('Spacing', 'text-domain'),
+                'label' => __('Spacing', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors' => [
@@ -391,28 +391,39 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'description_heading',
             [
-                'label' => __('Description', 'text-domain'),
+                'label' => __('Description', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
         );
+        $this->add_control(
+			'description_word_limit',
+			[
+				'label' => __( 'Description Word Limit', 'kadence-child' ),
+				'type' => \Elementor\Controls_Manager::NUMBER,
+				'min' => 1,
+				'max' => 100,
+				'default' => 20,
+				'description' => __( 'Set the maximum number of words for all descriptions.', 'kadence-child' ),
+			]
+		);
 
         $this->add_responsive_control(
             'description_alignment',
             [
-                'label' => __('Alignment', 'text-domain'),
+                'label' => __('Alignment', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __('Left', 'text-domain'),
+                        'title' => __('Left', 'kadence-child'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', 'text-domain'),
+                        'title' => __('Center', 'kadence-child'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => __('Right', 'text-domain'),
+                        'title' => __('Right', 'kadence-child'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -427,7 +438,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'description_typography',
-                'label' => __('Typography', 'text-domain'),
+                'label' => __('Typography', 'kadence-child'),
                 'selector' => '{{WRAPPER}} .package-description',
             ]
         );
@@ -435,7 +446,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'description_color',
             [
-                'label' => __('Color', 'text-domain'),
+                'label' => __('Color', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .package-description' => 'color: {{VALUE}};',
@@ -447,7 +458,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'duration_heading',
             [
-                'label' => __('Duration', 'text-domain'),
+                'label' => __('Duration', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -455,19 +466,19 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_responsive_control(
             'duration_alignment',
             [
-                'label' => __('Duration Alignment', 'text-domain'),
+                'label' => __('Duration Alignment', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __('Left', 'text-domain'),
+                        'title' => __('Left', 'kadence-child'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', 'text-domain'),
+                        'title' => __('Center', 'kadence-child'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => __('Right', 'text-domain'),
+                        'title' => __('Right', 'kadence-child'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -481,7 +492,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'duration_icon_color',
             [
-                'label' => __('Icon Color', 'text-domain'),
+                'label' => __('Icon Color', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .package-icon' => 'color: {{VALUE}};',
@@ -492,7 +503,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'duration_text_color',
             [
-                'label' => __('Text Color', 'text-domain'),
+                'label' => __('Text Color', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .package-duration' => 'color: {{VALUE}};',
@@ -504,7 +515,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'duration_typography',
-                'label' => __('Typography', 'text-domain'),
+                'label' => __('Typography', 'kadence-child'),
                 'selector' => '{{WRAPPER}} .package-duration',
             ]
         );
@@ -513,7 +524,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'cta_heading',
             [
-                'label' => __('CTA Button', 'text-domain'),
+                'label' => __('CTA Button', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -522,19 +533,19 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_responsive_control(
             'cta_alignment',
             [
-                'label' => __('CTA Alignment', 'text-domain'),
+                'label' => __('CTA Alignment', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __('Left', 'text-domain'),
+                        'title' => __('Left', 'kadence-child'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', 'text-domain'),
+                        'title' => __('Center', 'kadence-child'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => __('Right', 'text-domain'),
+                        'title' => __('Right', 'kadence-child'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -548,7 +559,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'arrows_heading',
             [
-                'label' => __('Slider Arrows', 'text-domain'),
+                'label' => __('Slider Arrows', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'separator' => 'before',
                 'condition' => ['layout_style' => 'slider'],
@@ -558,7 +569,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'arrow_color',
             [
-                'label' => __('Arrow Color', 'text-domain'),
+                'label' => __('Arrow Color', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .swiper-button-next, {{WRAPPER}} .swiper-button-prev' => 'color: {{VALUE}};',
@@ -570,7 +581,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'arrow_bg_color',
             [
-                'label' => __('Arrow Background', 'text-domain'),
+                'label' => __('Arrow Background', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .swiper-button-next, {{WRAPPER}} .swiper-button-prev' => 'background-color: {{VALUE}};',
@@ -582,7 +593,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_responsive_control(
             'arrow_size',
             [
-                'label' => __('Arrow Size', 'text-domain'),
+                'label' => __('Arrow Size', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -601,7 +612,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name' => 'arrow_border',
-                'label' => __('Arrow Border', 'text-domain'),
+                'label' => __('Arrow Border', 'kadence-child'),
                 'selector' => '{{WRAPPER}} .swiper-button-next, {{WRAPPER}} .swiper-button-prev',
                 'condition' => ['layout_style' => 'slider'],
             ]
@@ -610,7 +621,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_responsive_control(
             'arrow_border_radius',
             [
-                'label' => __('Arrow Border Radius', 'text-domain'),
+                'label' => __('Arrow Border Radius', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors' => [
@@ -623,7 +634,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_responsive_control(
             'arrow_spacing',
             [
-                'label' => __('Arrow Spacing', 'text-domain'),
+                'label' => __('Arrow Spacing', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -645,14 +656,14 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->start_controls_tab(
             'cta_normal',
             [
-                'label' => __('Normal', 'text-domain'),
+                'label' => __('Normal', 'kadence-child'),
             ]
         );
 
         $this->add_control(
             'cta_text_color',
             [
-                'label' => __('Text Color', 'text-domain'),
+                'label' => __('Text Color', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .learn-more-btn' => 'color: {{VALUE}};',
@@ -663,7 +674,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'cta_icon_color',
             [
-                'label' => __('Icon Color', 'text-domain'),
+                'label' => __('Icon Color', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .arrow-icon' => 'color: {{VALUE}};',
@@ -675,7 +686,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'cta_typography',
-                'label' => __('Typography', 'text-domain'),
+                'label' => __('Typography', 'kadence-child'),
                 'selector' => '{{WRAPPER}} .learn-more-btn',
             ]
         );
@@ -685,14 +696,14 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->start_controls_tab(
             'cta_hover',
             [
-                'label' => __('Hover', 'text-domain'),
+                'label' => __('Hover', 'kadence-child'),
             ]
         );
 
         $this->add_control(
             'cta_hover_color',
             [
-                'label' => __('Text Color', 'text-domain'),
+                'label' => __('Text Color', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .learn-more-btn:hover' => 'color: {{VALUE}};',
@@ -703,7 +714,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'cta_icon_hover_color',
             [
-                'label' => __('Icon Color', 'text-domain'),
+                'label' => __('Icon Color', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .learn-more-btn:hover .arrow-icon' => 'color: {{VALUE}};',
@@ -714,7 +725,7 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'cta_hover_animation',
             [
-                'label' => __('Hover Animation', 'text-domain'),
+                'label' => __('Hover Animation', 'kadence-child'),
                 'type' => \Elementor\Controls_Manager::HOVER_ANIMATION,
             ]
         );
@@ -754,13 +765,24 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
                         <?php endif; ?>
 
                         <div class="package-card">
-                            <!-- Replace with actual content -->
+                            
                             <div class="package-image">
                                 <img src="<?php echo esc_url($package['image']['url']); ?>" alt="<?php echo esc_attr($package['title']); ?>">
                             </div>
                             <div class="package-content">
                                 <h3 class="package-title"><?php echo esc_html($package['title']); ?></h3>
-                                <div class="package-description"><?php echo esc_html($package['description']); ?></div>
+                               <?php
+									$desc = $package['description'];
+                                    $word_limit = !empty($settings['description_word_limit']) ? intval($settings['description_word_limit']) : 20; // use global setting
+
+                                    $desc_words = explode(' ', wp_strip_all_tags($desc));
+                                    if (count($desc_words) > $word_limit) {
+                                        $desc_trimmed = implode(' ', array_slice($desc_words, 0, $word_limit)) . '...';
+                                    } else {
+                                        $desc_trimmed = $desc;
+                                    }
+                                    ?>
+                                    <div class="package-description"><?php echo esc_html($desc_trimmed); ?></div>
                                 <div class="package-duration">
                                     <span class="package-icon">🕒</span><?php echo esc_html($package['duration']); ?>
                                 </div>
@@ -874,10 +896,11 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
         .package-card:hover {
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
             transform: translateY(-4px) scale(1.01);
+			
         }
 
         .package-image {
-            height: 190px;
+            height: 250px;
             overflow: hidden;
         }
 
@@ -985,6 +1008,41 @@ class Kasturi_Packages_Widget extends \Elementor\Widget_Base {
                 padding: 16px 10px 14px;
             }
         }
+		/* Make the slide container a flex row */
+            .swiper-wrapper {
+                display: flex;
+                align-items: stretch;
+            }
+
+            /* Make each slide take full height */
+            .swiper-slide {
+                display: flex;
+                height: auto; /* Let height be determined by content */
+            }
+
+            /* Make the card stretch to fill the slide */
+            .package-card {
+                display: flex;
+                flex-direction: column;
+                height:100%;
+            }
+                    .package-content {
+                display: flex;
+                flex-direction: column;
+                flex: 1 1 auto;
+                height: 50%;
+            }
+
+            .package-title,
+            .package-description {
+                /* No change needed unless you want to tweak spacing */
+            }
+
+            /* This ensures duration and CTA are always at the bottom */
+            .package-duration,
+            .package-cta {
+                margin-top: auto;
+            }
     </style>
     <?php
 }}
