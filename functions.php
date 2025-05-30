@@ -18,7 +18,11 @@ add_action( 'wp_enqueue_scripts', 'kadence_child_style' );
 
 function register_kasturi_package_widget( $widgets_manager ) {
     require_once get_stylesheet_directory() . '/widget/kasturi-package-widget.php';
+    require_once get_stylesheet_directory() . '/widget/kasturi-banner-widget.php';
+
     $widgets_manager->register( new \Kasturi_Packages_Widget() );
+    $widgets_manager->register( new \Kasturi_Banner_Widget() );
+
 }
 add_action( 'elementor/widgets/register', 'register_kasturi_package_widget' );
 
@@ -42,3 +46,14 @@ function kadence_child_enqueue_preloader_script() {
     );
 }
 add_action('wp_enqueue_scripts', 'kadence_child_enqueue_preloader_script');
+
+
+
+//  enqueue Swiper in your functions.php:
+
+add_action('wp_enqueue_scripts', function() {
+    
+    wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css');
+    wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js', [], null, true);
+    wp_enqueue_script('kadence-child-banner', get_stylesheet_directory_uri() . '/js/banner.js', ['swiper-js'], '1.0', true);
+});
