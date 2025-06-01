@@ -41,7 +41,13 @@ This screenshot showcases the custom Banner Widget integrated into the Elementor
 
 Packages Widget Screenshot
 
+variation 1
 ![image](https://github.com/user-attachments/assets/f9e1e2a5-a03b-4ea8-b02b-070cc2848c5a)
+
+variation 2
+
+![image](https://github.com/user-attachments/assets/df238ce4-e1d0-4b9c-9ff1-10e62846c76a)
+
 
 This image illustrates the Packages Widget, enabling the presentation of various holiday packages in a structured and visually appealing manner.
 
