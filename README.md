@@ -45,7 +45,6 @@ variation 1
 ![image](https://github.com/user-attachments/assets/f9e1e2a5-a03b-4ea8-b02b-070cc2848c5a)
 
 variation 2
-
 ![image](https://github.com/user-attachments/assets/df238ce4-e1d0-4b9c-9ff1-10e62846c76a)
 
 
